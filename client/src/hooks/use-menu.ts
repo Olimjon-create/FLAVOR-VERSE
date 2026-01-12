@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { api, buildUrl } from "@shared/routes";
+import { useScroll, useAnimateMini } from "framer-motion";
 
 export function useMenu(filters?: { category?: string; search?: string }) {
   const queryKey = [api.menu.list.path, filters?.category, filters?.search];
@@ -37,4 +38,3 @@ export function useMenuItem(id: number) {
     enabled: !isNaN(id),
   });
 }
-// created
